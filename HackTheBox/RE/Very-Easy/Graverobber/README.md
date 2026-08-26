@@ -18,6 +18,10 @@
 
 # Übersicht
 
+In dieser Challenge besteht das Ziel darin, die bereitgestellte Binary zu analysieren und herauszufinden, welche Eingabe benötigt wird, um den erfolgreichen Programmpfad zu erreichen.
+
+Dabei möchte ich nicht einfach die richtige Eingabe erraten oder bruteforcen, sondern nachvollziehen, wie das Programm die Eingabe verarbeitet und überprüft.
+
 ---
 
 # 1. Erste Analyse der Binary
