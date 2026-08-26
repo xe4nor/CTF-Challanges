@@ -30,6 +30,8 @@ erraten oder bruteforcen, sondern nachvollziehen, wie das Programm die Eingabe v
 
 Bevor ich die Datei in Ghidra öffne, sammle ich zunächst grundlegende Informationen.
 
+file robber
+
 ```bash
 file robber
 ```
@@ -37,6 +39,7 @@ file robber
 ## Ausgabe
 
 ```text
+robber: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV)
 ```
 
 ## Erkenntnisse
