@@ -28,7 +28,10 @@ erraten oder bruteforcen, sondern nachvollziehen, wie das Programm die Eingabe v
 
 # 1. Erste Analyse der Binary
 
+Bevor ich die Datei in Ghidra öffne, sammle ich zunächst grundlegende Informationen.
+
 ```bash
+file robber
 ```
 
 ## Ausgabe
