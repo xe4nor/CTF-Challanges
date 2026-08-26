@@ -30,8 +30,6 @@ erraten oder bruteforcen, sondern nachvollziehen, wie das Programm die Eingabe v
 
 Bevor ich die Datei in Ghidra öffne, sammle ich zunächst grundlegende Informationen.
 
-file robber
-
 ```bash
 file robber
 ```
@@ -44,15 +42,15 @@ robber: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV)
 
 ## Erkenntnisse
 
-*
-*
-*
+* Es handelt sich um eine Linux Binary
+* 64-Bit
+* PIE ist aktiviert
 
 ## Offene Fragen
 
-*
-*
-*
+* wo wird die Benutzereingabe eingelesen ?
+* Wo wird die Eingabe überprüft ?
+* Welche Eingabe führt zu der HTB{...} Flag ? 
 
 ---
 
