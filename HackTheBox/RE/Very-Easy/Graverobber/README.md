@@ -56,12 +56,17 @@ robber: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV)
 
 # 2. Strings untersuchen
 
+Als Nächstes suche ich nach lesbaren Strings innerhalb der Binary.
+
 ```bash
+strings robber
 ```
 
 ## Interessante Strings
 
 ```text
+We took a wrong turning!
+We found the treasure! (I hope it's not cursed)
 ```
 
 ## Beobachtungen
@@ -70,20 +75,31 @@ robber: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV)
 
 # 3. Programmverhalten untersuchen
 
+Bevor ich mit der tieferen statischen Analyse beginne, führe ich die Binary aus.
+
 ```bash
+sudo chmod +x robber
 ```
 
 ## Eingabe
 
 ```text
+1234
+asdf
 ```
 
 ## Ausgabe
 
 ```text
+beides hat das Programm beendet
 ```
 
 ## Beobachtungen
+
+Als man das Programm gestartet hat, hat es nicht nach einer Benutzereingabe gefragt. Daraufhin habe ich probiert das Programm mit Argumenten zu starten sowohl zahlen als auch Buchstaben.
+Beides hat das Programm sofort beendet.
+
+<img width="940" height="328" alt="image" src="https://github.com/user-attachments/assets/7bb95c18-2d09-49bf-b390-30a094f8bd8c" />
 
 ---
 
