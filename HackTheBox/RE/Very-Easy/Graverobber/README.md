@@ -1,4 +1,4 @@
-# HTB Reverse Engineering – `<Challenge-Name>`
+# HTB Reverse Engineering – `< Graverobber >`
 
 > **Plattform:** HackTheBox
 > **Kategorie:** Reverse Engineering
