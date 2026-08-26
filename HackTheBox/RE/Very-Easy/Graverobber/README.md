@@ -3,11 +3,15 @@
 > **Plattform:** HackTheBox
 
 > **Kategorie:** Reverse Engineering
+
 > **Schwierigkeit:** Very-Easy
 
 > **Architektur:** x68-64
+
 > **Dateityp:** ELF 64-bit
+
 > **Tools:** Ghidra, strings, file
+
 > **Status:** Unsolved (running)
 
 ---
