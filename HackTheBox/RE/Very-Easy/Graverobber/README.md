@@ -238,7 +238,7 @@ Die Schliefe holt sich immer 4 bytes aus dem Datenbereich parts heraus
 
 # 6. Analyse der relevanten Funktion
 
-## Datentyp
+## Datenbereich
 
 ```text
 parts:
