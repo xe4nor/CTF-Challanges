@@ -251,7 +251,7 @@ wenn man sich jetzt die den parts Datenbereich genauer anschaut dann sieht man d
 
 ```
 
-## Decompiler
+## ASM
 
 ```asm
                              parts                                           XREF[3]:     Entry Point (*) , 
@@ -264,259 +264,297 @@ wenn man sich jetzt die den parts Datenbereich genauer anschaut dann sieht man d
 
 ```
 
-# 7. Algorithmus / Validierungslogik
+# 7. Eingabe / Lösung rekonstruieren
 
-## Erkannte Operationen
-
-```text
-```
-
-## Analyse
-
-```text
-```
-
-## Berechnungen
-
-```text
-```
-
-## Erkenntnisse
-
----
-
-# 8. Eingabe / Lösung rekonstruieren
+Um die Zeichen zu Rekonstruieren nehmen wir uns die Rohen Bytes und schreiben sie in Hex um und Anschließend bekommen wir einzelnd die ASCII Zeichen 
 
 ## Wert 1
 
-diese schreiben wir um, um die ASCII Zeichen zu bekommen:
-
-0x48 = H (Dezimal 72)
-0x54 = T (Dezimal 84)
-0x42 = B (Dezimal 66)
-
 ```text
+48 00 00 00:
+0x48 = H (Dezimal 72)
 ```
 
 ## Wert 2
 
 ```text
+54 00 00 00:
+0x54 = T (Dezimal 84)
 ```
 
 ## Wert 3
 
 ```text
+42 00 00 00:
+0x42 = B (Dezimal 66)
 ```
 
 ## Weitere Werte
 
+Genau das selbe machen wir jetzt mit den restlichen roh Bytes:
+
+```asm
+                             parts                                           XREF[3]:     Entry Point (*) , 
+                                                                                          main:001011d6 (*) , 
+                                                                                          main:001011dd (*)   
+        00104040 48  00  00       undefine
+                 00  54  00 
+                 00  00  42 
+           00104040 48              undefine  48h                     [0]                               XREF[3]:     Entry Point (*) , 
+                                                                                                                     main:001011d6 (*) , 
+                                                                                                                     main:001011dd (*)   
+           00104041 00              undefine  00h                     [1]
+           00104042 00              undefine  00h                     [2]
+           00104043 00              undefine  00h                     [3]
+           00104044 54              undefine  54h                     [4]
+           00104045 00              undefine  00h                     [5]
+           00104046 00              undefine  00h                     [6]
+           00104047 00              undefine  00h                     [7]
+           00104048 42              undefine  42h                     [8]
+           00104049 00              undefine  00h                     [9]
+           0010404a 00              undefine  00h                     [10]
+           0010404b 00              undefine  00h                     [11]
+
+
+           0010404c 7b              undefine  7Bh                     [12]
+           0010404d 00              undefine  00h                     [13]
+           0010404e 00              undefine  00h                     [14]
+           0010404f 00              undefine  00h                     [15]
+
+           00104050 62              undefine  62h                     [16]
+           00104051 00              undefine  00h                     [17]
+           00104052 00              undefine  00h                     [18]
+           00104053 00              undefine  00h                     [19]
+
+           00104054 72              undefine  72h                     [20]
+           00104055 00              undefine  00h                     [21]
+           00104056 00              undefine  00h                     [22]
+           00104057 00              undefine  00h                     [23]
+
+           00104058 33              undefine  33h                     [24]
+           00104059 00              undefine  00h                     [25]
+           0010405a 00              undefine  00h                     [26]
+           0010405b 00              undefine  00h                     [27]
+
+           0010405c 34              undefine  34h                     [28]
+           0010405d 00              undefine  00h                     [29]
+           0010405e 00              undefine  00h                     [30]
+           0010405f 00              undefine  00h                     [31]
+
+           00104060 6b              undefine  6Bh                     [32]
+           00104061 00              undefine  00h                     [33]
+           00104062 00              undefine  00h                     [34]
+           00104063 00              undefine  00h                     [35]
+
+           00104064 31              undefine  31h                     [36]
+           00104065 00              undefine  00h                     [37]
+           00104066 00              undefine  00h                     [38]
+           00104067 00              undefine  00h                     [39]
+
+           00104068 6e              undefine  6Eh                     [40]
+           00104069 00              undefine  00h                     [41]
+           0010406a 00              undefine  00h                     [42]
+           0010406b 00              undefine  00h                     [43]
+
+           0010406c 39              undefine  39h                     [44]
+           0010406d 00              undefine  00h                     [45]
+           0010406e 00              undefine  00h                     [46]
+           0010406f 00              undefine  00h                     [47]
+
+           00104070 5f              undefine  5Fh                     [48]
+           00104071 00              undefine  00h                     [49]
+           00104072 00              undefine  00h                     [50]
+           00104073 00              undefine  00h                     [51]
+
+           00104074 64              undefine  64h                     [52]
+           00104075 00              undefine  00h                     [53]
+           00104076 00              undefine  00h                     [54]
+           00104077 00              undefine  00h                     [55]
+
+           00104078 30              undefine  30h                     [56]
+           00104079 00              undefine  00h                     [57]
+           0010407a 00              undefine  00h                     [58]
+           0010407b 00              undefine  00h                     [59]
+
+           0010407c 77              undefine  77h                     [60]
+           0010407d 00              undefine  00h                     [61]
+           0010407e 00              undefine  00h                     [62]
+           0010407f 00              undefine  00h                     [63]
+
+           00104080 6e              undefine  6Eh                     [64]
+           00104081 00              undefine  00h                     [65]
+           00104082 00              undefine  00h                     [66]
+           00104083 00              undefine  00h                     [67]
+
+           00104084 5f              undefine  5Fh                     [68]
+           00104085 00              undefine  00h                     [69]
+           00104086 00              undefine  00h                     [70]
+           00104087 00              undefine  00h                     [71]
+
+           00104088 74              undefine  74h                     [72]
+           00104089 00              undefine  00h                     [73]
+           0010408a 00              undefine  00h                     [74]
+           0010408b 00              undefine  00h                     [75]
+
+           0010408c 68              undefine  68h                     [76]
+           0010408d 00              undefine  00h                     [77]
+           0010408e 00              undefine  00h                     [78]
+           0010408f 00              undefine  00h                     [79]
+
+           00104090 33              undefine  33h                     [80]
+           00104091 00              undefine  00h                     [81]
+           00104092 00              undefine  00h                     [82]
+           00104093 00              undefine  00h                     [83]
+
+           00104094 5f              undefine  5Fh                     [84]
+           00104095 00              undefine  00h                     [85]
+           00104096 00              undefine  00h                     [86]
+           00104097 00              undefine  00h                     [87]
+
+           00104098 73              undefine  73h                     [88]
+           00104099 00              undefine  00h                     [89]
+           0010409a 00              undefine  00h                     [90]
+           0010409b 00              undefine  00h                     [91]
+
+           0010409c 79              undefine  79h                     [92]
+           0010409d 00              undefine  00h                     [93]
+           0010409e 00              undefine  00h                     [94]
+           0010409f 00              undefine  00h                     [95]
+
+           001040a0 73              undefine  73h                     [96]
+           001040a1 00              undefine  00h                     [97]
+           001040a2 00              undefine  00h                     [98]
+           001040a3 00              undefine  00h                     [99]
+
+           001040a4 63              undefine  63h                     [100]
+           001040a5 00              undefine  00h                     [101]
+           001040a6 00              undefine  00h                     [102]
+           001040a7 00              undefine  00h                     [103]
+
+           001040a8 34              undefine  34h                     [104]
+           001040a9 00              undefine  00h                     [105]
+           001040aa 00              undefine  00h                     [106]
+           001040ab 00              undefine  00h                     [107]
+
+           001040ac 6c              undefine  6Ch                     [108]
+           001040ad 00              undefine  00h                     [109]
+           001040ae 00              undefine  00h                     [110]
+           001040af 00              undefine  00h                     [111]
+
+           001040b0 6c              undefine  6Ch                     [112]
+           001040b1 00              undefine  00h                     [113]
+           001040b2 00              undefine  00h                     [114]
+           001040b3 00              undefine  00h                     [115]
+
+           001040b4 35              undefine  35h                     [116]
+           001040b5 00              undefine  00h                     [117]
+           001040b6 00              undefine  00h                     [118]
+           001040b7 00              undefine  00h                     [119]
+
+           001040b8 7d              undefine  7Dh                     [120]
+           001040b9 00              undefine  00h                     [121]
+           001040ba 00              undefine  00h                     [122]
+           001040bb 00              undefine  00h                     [123]
+
+           001040bc 00              undefine  00h                     [124]
+           001040bd 00              undefine  00h                     [125]
+           001040be 00              undefine  00h                     [126]
+           001040bf 00              undefine  00h                     [127]
+
+```
+
+
 ```text
+7B 00 00 00:
+0x7B = { (Dezimal 123)
+
+62 00 00 00:
+0x62 = b (Dezimal 98)
+
+72 00 00 00:
+0x72 = r (Dezimal 114)
+
+33 00 00 00:
+0x33 = 3 (Dezimal 51)
+
+34 00 00 00:
+0x34 = 4 (Dezimal 52)
+
+6B 00 00 00:
+0x6B = k (Dezimal 107)
+
+31 00 00 00:
+0x31 = 1 (Dezimal 49)
+
+6E 00 00 00:
+0x6E = n (Dezimal 110)
+
+39 00 00 00:
+0x39 = 9 (Dezimal 57)
+
+5F 00 00 00:
+0x5F = _ (Dezimal 95)
+
+64 00 00 00:
+0x64 = d (Dezimal 100)
+
+30 00 00 00:
+0x30 = 0 (Dezimal 48)
+
+77 00 00 00:
+0x77 = w (Dezimal 119)
+
+6E 00 00 00:
+0x6E = n (Dezimal 110)
+
+5F 00 00 00:
+0x5F = _ (Dezimal 95)
+
+74 00 00 00:
+0x74 = t (Dezimal 116)
+
+68 00 00 00:
+0x68 = h (Dezimal 104)
+
+33 00 00 00:
+0x33 = 3 (Dezimal 51)
+
+5F 00 00 00:
+0x5F = _ (Dezimal 95)
+
+73 00 00 00:
+0x73 = s (Dezimal 115)
+
+79 00 00 00:
+0x79 = y (Dezimal 121)
+
+73 00 00 00:
+0x73 = s (Dezimal 115)
+
+63 00 00 00:
+0x63 = c (Dezimal 99)
+
+34 00 00 00:
+0x34 = 4 (Dezimal 52)
+
+6C 00 00 00:
+0x6C = l (Dezimal 108)
+
+6C 00 00 00:
+0x6C = l (Dezimal 108)
+
+35 00 00 00:
+0x35 = 5 (Dezimal 53)
+
+7D 00 00 00:
+0x7D = } (Dezimal 125)
 ```
 
 ## Rekonstruiertes Ergebnis
+Jetzt wo ich alle Bytes rekonstruiert habe kommt man auf den Schluss:
 
 ```text
+HTB{br34kn1_d0wn_th3_sysc4ll5}
 ```
-
----
-
-# 9. Assembly-Analyse
-
-```asm
-```
-
-## Relevante Instruktionen
-
-### `<Instruktion>`
-
-### `<Instruktion>`
-
-### `<Instruktion>`
-
-## Erkenntnisse
-
----
-
-# 10. Solver
-
-## `solve.c`
-
-```c
-```
-
-## Kompilieren
-
-```bash
-```
-
-## Ausführen
-
-```bash
-```
-
-## Ausgabe
-
-```text
-```
-
----
-
-# 11. Lösung verifizieren
-
-## Ausführen
-
-```bash
-```
-
-## Eingabe
-
-```text
-```
-
-## Ausgabe
-
-```text
-```
-
-## Ergebnis
-
----
-
-#  Was habe ich gelernt?
-
-## Technische Erkenntnisse
-
-*
-*
-*
-
-## Neue Instruktionen / Funktionen
-
-*
-*
-*
-
-## Neue Reverse-Engineering-Techniken
-
-*
-*
-*
-
----
-
-#  Was war während der Analyse unklar?
-
-## Problem / Frage 1
-
-### Erklärung
-
----
-
-## Problem / Frage 2
-
-### Erklärung
-
----
-
-## Problem / Frage 3
-
-### Erklärung
-
----
-
-#  Sackgassen / Fehlversuche
-
-## Versuch 1
-
-### Warum hat es nicht funktioniert?
-
-### Was habe ich daraus gelernt?
-
----
-
-## Versuch 2
-
-### Warum hat es nicht funktioniert?
-
-### Was habe ich daraus gelernt?
-
----
-
-#  Notizen
-
-```text
-```
-
----
-
-#  Zusammenfassung des Analysewegs
-
-```text
-Binary
-   │
-   ▼
-
-   │
-   ▼
-
-   │
-   ▼
-
-   │
-   ▼
-
-   │
-   ▼
-
-```
-
----
-
-#  Fazit
-
----
-
-#  Screenshots
-
-## Screenshot 1
-
-```text
-```
-
-### Beschreibung
-
----
-
-## Screenshot 2
-
-```text
-```
-
-### Beschreibung
-
----
-
-## Screenshot 3
-
-```text
-```
-
-### Beschreibung
-
----
-
-#  Dateien
-
-```text
-<Challenge-Name>/
-│
-├── README.md
-├── 
-└── 
-```
-
----
-
-## Hinweis
 
 Ich veröffentliche nur Inhalte, deren Veröffentlichung durch die jeweilige Plattform erlaubt ist. Challenge-Binaries, Flags oder andere geschützte Dateien werden nicht ohne entsprechende Erlaubnis in das Repository aufgenommen.
