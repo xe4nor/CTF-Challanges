@@ -12,7 +12,7 @@
 
 > **Tools:** Ghidra, strings, file
 
-> **Status:** Unsolved (running)
+> **Status:** Solved
 
 ---
 
