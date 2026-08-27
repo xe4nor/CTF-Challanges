@@ -554,7 +554,7 @@ Genau das selbe machen wir jetzt mit den restlichen roh Bytes:
 Jetzt wo ich alle Bytes rekonstruiert habe kommt man auf den Schluss:
 
 ```text
-HTB{br34kn1_d0wn_th3_sysc4ll5}
+HTB{br34k1n9_d0wn_th3_sysc4ll5}
 ```
 
 Ich veröffentliche nur Inhalte, deren Veröffentlichung durch die jeweilige Plattform erlaubt ist. Challenge-Binaries, Flags oder andere geschützte Dateien werden nicht ohne entsprechende Erlaubnis in das Repository aufgenommen.
