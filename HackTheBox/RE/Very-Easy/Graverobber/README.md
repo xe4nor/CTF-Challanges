@@ -216,48 +216,53 @@ LAB_00101256:
 
 ## Beobachtungen
 
-## Interessante Funktionen
+* Der parts Datenbereich liest immer 4 bytes aus (wegen undefined4) und holt sich immer wieder werte aus parts heraus
 
-*
-*
-*
+```c
+local_58[(int)(local_ec * 2)] = (char)*(undefined4 *)(parts + (long)(int)local_ec * 4);
+```  
 
 ---
 
 # 5. Datenfluss / Benutzereingabe verfolgen
 
 ```text
+Die Schliefe holt sich immer 4 bytes aus dem Datenbereich parts heraus
 ```
 
 ## Erkenntnisse
 
-*
-*
-*
-
-## Offene Fragen
-
-*
-*
-*
+* Es kann rekonstruiert werden.
 
 ---
 
 # 6. Analyse der relevanten Funktion
 
-## Funktion
+## Datentyp
 
 ```text
+parts:
+
+wenn man sich jetzt die den parts Datenbereich genauer anschaut dann sieht man die rohen bytes:
+
+48 00 00 00
+54 00 00 00
+42 00 00 00
+
 ```
 
 ## Decompiler
 
-```c
+```asm
+                             parts                                           XREF[3]:     Entry Point (*) , 
+                                                                                          main:001011d6 (*) , 
+                                                                                          main:001011dd (*)   
+        00104040 48  00  00       undefine
+                 00  54  00 
+                 00  00  42 
+           
+
 ```
-
-## Beobachtungen
-
----
 
 # 7. Algorithmus / Validierungslogik
 
@@ -283,6 +288,12 @@ LAB_00101256:
 # 8. Eingabe / Lösung rekonstruieren
 
 ## Wert 1
+
+diese schreiben wir um, um die ASCII Zeichen zu bekommen:
+
+0x48 = H (Dezimal 72)
+0x54 = T (Dezimal 84)
+0x42 = B (Dezimal 66)
 
 ```text
 ```
