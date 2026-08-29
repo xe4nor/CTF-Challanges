@@ -1,11 +1,17 @@
 # THM Reverse Engineering – `ELF Room Crackme3`
 
 > **Plattform:** TryHackMe
+
 > **Kategorie:** Reverse Engineering
+
 > **Schwierigkeit:** Easy
+
 > **Architektur:** x86 i386
+
 > **Dateityp:** ELF
+
 > **Tools:** file strings ghidra
+
 > **Status:** Solved
 
 ---
@@ -32,7 +38,7 @@ crackme3: ELF 32-bit LSB executable, Intel i386, version 1 (SYSV)
 * ELF
 * 32-Bit
 
---
+---
 
 # 2. Strings untersuchen
 
