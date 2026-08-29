@@ -19,6 +19,7 @@
 # Übersicht
 
 Ziel der Challenge ist es das Programmverhalten zu verstehen und die Flagge zu bekommen.
+
 ---
 
 # 1. Erste Analyse der Binary
